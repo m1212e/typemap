@@ -73,6 +73,24 @@ function resolveExports(submodules: string[]) {
         "types": "./build/esm/index.d.mts",
         "default": "./build/esm/index.mjs",
       }
+    },
+    "./typebox/*": {
+      "require": "./build/cjs/typebox/*",
+      "import": "./build/esm/typebox/*",
+      "node": "./build/cjs/typebox/*",
+      "default": "./build/cjs/typebox/*"
+    },
+    "./zod/*": {
+      "require": "./build/cjs/zod/*",
+      "import": "./build/esm/zod/*",
+      "node": "./build/cjs/zod/*",
+      "default": "./build/cjs/zod/*"
+    },
+    "./valibot/*": {
+      "require": "./build/cjs/valibot/*",
+      "import": "./build/esm/valibot/*",
+      "node": "./build/cjs/valibot/*",
+      "default": "./build/cjs/valibot/*"
     }
   })
   return { exports }
