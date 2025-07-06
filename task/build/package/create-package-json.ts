@@ -74,6 +74,12 @@ function resolveExports(submodules: string[]) {
         "default": "./build/esm/index.mjs",
       }
     },
+    "./guard": {
+      "require": "./build/cjs/guard.js",
+      "import": "./build/esm/guard.mjs",
+      "node": "./build/cjs/guard.js",
+      "default": "./build/cjs/guard.js"
+    },
     "./typebox/*": {
       "require": "./build/cjs/typebox/*",
       "import": "./build/esm/typebox/*",
