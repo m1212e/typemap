@@ -26,18 +26,31 @@ THE SOFTWARE.
 
 ---------------------------------------------------------------------------*/
 
-import { type TValibotFromSyntax, ValibotFromSyntax } from './valibot-from-syntax'
-import { type TValibotFromTypeBox, ValibotFromTypeBox } from './valibot-from-typebox'
-import { type TValibotFromValibot, ValibotFromValibot } from './valibot-from-valibot'
-import { type TValibotFromZod, ValibotFromZod } from './valibot-from-zod'
-import { type TSyntaxOptions } from '../options'
+import {
+  type TValibotFromSyntax,
+  ValibotFromSyntax,
+} from "./valibot-from-syntax";
+import {
+  type TValibotFromTypeBox,
+  ValibotFromTypeBox,
+} from "./valibot-from-typebox";
+import {
+  type TValibotFromValibot,
+  ValibotFromValibot,
+} from "./valibot-from-valibot";
+import { type TValibotFromZod, ValibotFromZod } from "./valibot-from-zod";
+import { type TSyntaxOptions } from "../options";
 
-import { type TParameter, type TContextFromParameter, ContextFromParameter } from '../typebox/typebox'
+import {
+  type TParameter,
+  type TContextFromParameter,
+  ContextFromParameter,
+} from "../typebox";
 
-import * as g from '../guard'
-import * as t from '@sinclair/typebox'
-import * as v from 'valibot'
-import * as c from './common'
+import * as g from "../guard";
+import * as t from "@sinclair/typebox";
+import * as v from "valibot";
+import * as c from "./common";
 
 // ------------------------------------------------------------------
 // Valibot
@@ -53,11 +66,21 @@ export type TValibot<Parameter extends TParameter, Type extends object | string,
 )> = Result
 
 /** Creates a Valibot type by mapping from a remote Type */
-export function Valibot<Parameter extends TParameter, Type extends string>(parameter: Parameter, type: Type, options?: TSyntaxOptions): TValibot<Parameter, Type>
+export function Valibot<Parameter extends TParameter, Type extends string>(
+  parameter: Parameter,
+  type: Type,
+  options?: TSyntaxOptions
+): TValibot<Parameter, Type>;
 /** Creates a Valibot type by mapping from a remote Type */
-export function Valibot<Type extends string>(type: Type, options?: TSyntaxOptions): TValibot<{}, Type>
+export function Valibot<Type extends string>(
+  type: Type,
+  options?: TSyntaxOptions
+): TValibot<{}, Type>;
 /** Creates a Valibot type by mapping from a remote Type */
-export function Valibot<Type extends object>(type: Type, options?: TSyntaxOptions): TValibot<{}, Type>
+export function Valibot<Type extends object>(
+  type: Type,
+  options?: TSyntaxOptions
+): TValibot<{}, Type>;
 /** Creates a Valibot type by mapping from a remote Type */
 // prettier-ignore
 export function Valibot(...args: any[]): never {

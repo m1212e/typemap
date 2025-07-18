@@ -26,16 +26,20 @@ THE SOFTWARE.
 
 ---------------------------------------------------------------------------*/
 
-import { type TZodFromSyntax, ZodFromSyntax } from './zod-from-syntax'
-import { type TZodFromTypeBox, ZodFromTypeBox } from './zod-from-typebox'
-import { type TZodFromValibot, ZodFromValibot } from './zod-from-valibot'
-import { type TZodFromZod, ZodFromZod } from './zod-from-zod'
-import { type TSyntaxOptions } from '../options'
+import { type TZodFromSyntax, ZodFromSyntax } from "./zod-from-syntax";
+import { type TZodFromTypeBox, ZodFromTypeBox } from "./zod-from-typebox";
+import { type TZodFromValibot, ZodFromValibot } from "./zod-from-valibot";
+import { type TZodFromZod, ZodFromZod } from "./zod-from-zod";
+import { type TSyntaxOptions } from "../options";
 
-import { type TParameter, type TContextFromParameter, ContextFromParameter } from '../typebox/typebox'
+import {
+  type TParameter,
+  type TContextFromParameter,
+  ContextFromParameter,
+} from "../typebox";
 
-import * as g from '../guard'
-import * as z from 'zod'
+import * as g from "../guard";
+import * as z from "zod";
 
 // ------------------------------------------------------------------
 // Zod
@@ -51,11 +55,21 @@ export type TZod<Parameter extends TParameter, Type extends object | string, Res
 )> = Result
 
 /** Creates a Zod type by mapping from a remote Type */
-export function Zod<Parameter extends TParameter, Type extends string>(parameter: Parameter, type: Type, options?: TSyntaxOptions): TZod<Parameter, Type>
+export function Zod<Parameter extends TParameter, Type extends string>(
+  parameter: Parameter,
+  type: Type,
+  options?: TSyntaxOptions
+): TZod<Parameter, Type>;
 /** Creates a Zod type by mapping from a remote Type */
-export function Zod<Type extends string>(type: Type, options?: TSyntaxOptions): TZod<{}, Type>
+export function Zod<Type extends string>(
+  type: Type,
+  options?: TSyntaxOptions
+): TZod<{}, Type>;
 /** Creates a Zod type by mapping from a remote Type */
-export function Zod<Type extends object>(type: Type, options?: TSyntaxOptions): TZod<{}, Type>
+export function Zod<Type extends object>(
+  type: Type,
+  options?: TSyntaxOptions
+): TZod<{}, Type>;
 /** Creates a Zod type by mapping from a remote Type */
 // prettier-ignore
 export function Zod(...args: any[]): never {

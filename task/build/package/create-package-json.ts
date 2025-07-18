@@ -74,30 +74,6 @@ function resolveExports(submodules: string[]) {
         "default": "./build/esm/index.mjs",
       }
     },
-    "./guard": {
-      "require": "./build/cjs/guard.js",
-      "import": "./build/esm/guard.mjs",
-      "node": "./build/cjs/guard.js",
-      "default": "./build/cjs/guard.js"
-    },
-    "./typebox/*": {
-      "require": "./build/cjs/typebox/*",
-      "import": "./build/esm/typebox/*",
-      "node": "./build/cjs/typebox/*",
-      "default": "./build/cjs/typebox/*"
-    },
-    "./zod/*": {
-      "require": "./build/cjs/zod/*",
-      "import": "./build/esm/zod/*",
-      "node": "./build/cjs/zod/*",
-      "default": "./build/cjs/zod/*"
-    },
-    "./valibot/*": {
-      "require": "./build/cjs/valibot/*",
-      "import": "./build/esm/valibot/*",
-      "node": "./build/cjs/valibot/*",
-      "default": "./build/cjs/valibot/*"
-    }
   })
   return { exports }
 }

@@ -32,7 +32,7 @@ import { createPackageJson } from './create-package-json'
 /** Builds package.json and redirect directories */
 export async function build(target: string) {
   console.log('building...package.json')
-  const submodules = [] as string[]
+  const submodules = ['typebox', 'valibot', 'zod', 'guard'] as string[]
   await createPackageJsonRedirect(target, submodules)
   await createPackageJson(target, submodules)
 }

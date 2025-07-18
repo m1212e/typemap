@@ -26,14 +26,23 @@ THE SOFTWARE.
 
 ---------------------------------------------------------------------------*/
 
-import { type TTypeBoxFromSyntax, TypeBoxFromSyntax } from './typebox-from-syntax'
-import { type TTypeBoxFromTypeBox, TypeBoxFromTypeBox } from './typebox-from-typebox'
-import { type TTypeBoxFromValibot, TypeBoxFromValibot } from './typebox-from-valibot'
-import { type TTypeBoxFromZod, TypeBoxFromZod } from './typebox-from-zod'
-import { type TSyntaxOptions } from '../options'
+import {
+  type TTypeBoxFromSyntax,
+  TypeBoxFromSyntax,
+} from "./typebox-from-syntax";
+import {
+  type TTypeBoxFromTypeBox,
+  TypeBoxFromTypeBox,
+} from "./typebox-from-typebox";
+import {
+  type TTypeBoxFromValibot,
+  TypeBoxFromValibot,
+} from "./typebox-from-valibot";
+import { type TTypeBoxFromZod, TypeBoxFromZod } from "./typebox-from-zod";
+import { type TSyntaxOptions } from "../options";
 
-import * as g from '../guard'
-import * as t from '@sinclair/typebox'
+import * as g from "../guard";
+import * as t from "@sinclair/typebox";
 
 // ------------------------------------------------------------------------------
 //
@@ -44,7 +53,7 @@ import * as t from '@sinclair/typebox'
 // the remote types such that they can be mapped prior to syntax parsing.
 //
 // -------------------------------------------------------------------------------
-export type TParameter = Record<PropertyKey, object>
+export type TParameter = Record<PropertyKey, object>;
 
 // ------------------------------------------------------------------
 // ContextFromParameter
@@ -75,9 +84,16 @@ export type TTypeBox<Parameter extends TParameter, Type extends object | string,
   t.TNever
 )> = Result
 /** Creates a TypeBox type by mapping from a remote Type */
-export function TypeBox<Parameter extends TParameter, Type extends string>(parameter: Parameter, type: Type, options?: TSyntaxOptions): TTypeBox<Parameter, Type>
+export function TypeBox<Parameter extends TParameter, Type extends string>(
+  parameter: Parameter,
+  type: Type,
+  options?: TSyntaxOptions
+): TTypeBox<Parameter, Type>;
 /** Creates a TypeBox type by mapping from a remote Type */
-export function TypeBox<Type extends object | string>(type: Type, options?: TSyntaxOptions): TTypeBox<{}, Type>
+export function TypeBox<Type extends object | string>(
+  type: Type,
+  options?: TSyntaxOptions
+): TTypeBox<{}, Type>;
 /** Creates a TypeBox type by mapping from a remote Type */
 // prettier-ignore
 export function TypeBox(...args: any[]): never {
@@ -92,9 +108,16 @@ export function TypeBox(...args: any[]): never {
 }
 
 /** Creates a TypeBox type from Syntax or another Type */
-export function Type<Parameter extends TParameter, Type extends string>(parameter: Parameter, type: Type, options?: TSyntaxOptions): TTypeBox<Parameter, Type>
+export function Type<Parameter extends TParameter, Type extends string>(
+  parameter: Parameter,
+  type: Type,
+  options?: TSyntaxOptions
+): TTypeBox<Parameter, Type>;
 /** Creates a TypeBox type from Syntax or another Type */
-export function Type<Type extends object | string>(type: Type, options?: TSyntaxOptions): TTypeBox<{}, Type>
+export function Type<Type extends object | string>(
+  type: Type,
+  options?: TSyntaxOptions
+): TTypeBox<{}, Type>;
 /** Creates a TypeBox type from Syntax or another Type */
 // prettier-ignore
 export function Type(...args: any[]): never {
