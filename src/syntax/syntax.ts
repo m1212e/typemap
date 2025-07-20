@@ -26,21 +26,15 @@ THE SOFTWARE.
 
 ---------------------------------------------------------------------------*/
 
-import { type TSyntaxFromSyntax, SyntaxFromSyntax } from "./syntax-from-syntax";
-import {
-  type TSyntaxFromTypeBox,
-  SyntaxFromTypeBox,
-} from "./syntax-from-typebox";
-import {
-  type TSyntaxFromValibot,
-  SyntaxFromValibot,
-} from "./syntax-from-valibot";
-import { type TSyntaxFromZod, SyntaxFromZod } from "./syntax-from-zod";
-import { type TSyntaxOptions } from "../options";
-import { type TParameter } from "../typebox";
+import { type TSyntaxFromSyntax, SyntaxFromSyntax } from './syntax-from-syntax'
+import { type TSyntaxFromTypeBox, SyntaxFromTypeBox } from './syntax-from-typebox'
+import { type TSyntaxFromValibot, SyntaxFromValibot } from './syntax-from-valibot'
+import { type TSyntaxFromZod, SyntaxFromZod } from './syntax-from-zod'
+import { type TSyntaxOptions } from '../options'
+import { type TParameter } from '../typebox/index'
 
-import * as g from "../guard";
-import * as z from "zod";
+import * as g from '../guard/index'
+import * as z from 'zod'
 
 // ------------------------------------------------------------------
 // Zod
@@ -56,21 +50,11 @@ export type TSyntax<_Parameter extends TParameter, Type extends object | string,
 )> = Result
 
 /** Creates Syntax by mapping from a remote Type */
-export function Syntax<Parameter extends TParameter, Type extends string>(
-  parameter: Parameter,
-  type: Type,
-  options?: TSyntaxOptions
-): TSyntax<Parameter, Type>;
+export function Syntax<Parameter extends TParameter, Type extends string>(parameter: Parameter, type: Type, options?: TSyntaxOptions): TSyntax<Parameter, Type>
 /** Creates Syntax by mapping from a remote Type */
-export function Syntax<Type extends string>(
-  type: Type,
-  options?: TSyntaxOptions
-): TSyntax<{}, Type>;
+export function Syntax<Type extends string>(type: Type, options?: TSyntaxOptions): TSyntax<{}, Type>
 /** Creates Syntax by mapping from a remote Type */
-export function Syntax<Type extends object>(
-  type: Type,
-  options?: TSyntaxOptions
-): TSyntax<{}, Type>;
+export function Syntax<Type extends object>(type: Type, options?: TSyntaxOptions): TSyntax<{}, Type>
 /** Creates Syntax by mapping from a remote Type */
 // prettier-ignore
 export function Syntax(...args: any[]): never {

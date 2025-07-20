@@ -26,16 +26,15 @@ THE SOFTWARE.
 
 ---------------------------------------------------------------------------*/
 
-import { TypeCompiler, TypeCheck } from "@sinclair/typebox/compiler";
-import { Value } from "@sinclair/typebox/value";
-import { IsEvalSupported } from "./environment";
-import { Validator } from "./validator";
+import { TypeCompiler, TypeCheck } from '@sinclair/typebox/compiler'
+import { Value } from '@sinclair/typebox/value'
+import { IsEvalSupported } from './environment'
+import { Validator } from './validator'
 
-import { type TTypeBox, TypeBox } from "../typebox";
-import { type TSyntaxOptions } from "../options";
-import { type TParameter } from "../typebox";
-import * as t from "@sinclair/typebox";
-import * as g from "../guard";
+import { type TTypeBox, type TParameter, TypeBox } from '../typebox/index'
+import { type TSyntaxOptions } from '../options'
+import * as t from '@sinclair/typebox'
+import * as g from '../guard/index'
 
 // ------------------------------------------------------------------
 // CompileDynamic
@@ -48,7 +47,7 @@ function CompileDynamic<Type extends t.TSchema>(type: Type, references: t.TSchem
 // ResolveTypeCheck
 // ------------------------------------------------------------------
 function ResolveTypeCheck<Type extends t.TSchema>(type: Type): TypeCheck<Type> {
-  return IsEvalSupported() ? TypeCompiler.Compile(type) : CompileDynamic(type);
+  return IsEvalSupported() ? TypeCompiler.Compile(type) : CompileDynamic(type)
 }
 // ------------------------------------------------------------------
 // Compile
@@ -61,21 +60,11 @@ type TCompile<Paramter extends TParameter, Type extends object | string,
 > = Result
 
 /** Compiles a type for high performance validation */
-export function Compile<Parameter extends TParameter, Type extends string>(
-  parameter: Parameter,
-  type: Type,
-  options?: TSyntaxOptions
-): TCompile<Parameter, Type>;
+export function Compile<Parameter extends TParameter, Type extends string>(parameter: Parameter, type: Type, options?: TSyntaxOptions): TCompile<Parameter, Type>
 /** Compiles a type for high performance validation */
-export function Compile<Type extends string>(
-  type: Type,
-  options?: TSyntaxOptions
-): TCompile<{}, Type>;
+export function Compile<Type extends string>(type: Type, options?: TSyntaxOptions): TCompile<{}, Type>
 /** Compiles a type for high performance validation */
-export function Compile<Type extends object>(
-  type: Type,
-  options?: TSyntaxOptions
-): TCompile<{}, Type>;
+export function Compile<Type extends object>(type: Type, options?: TSyntaxOptions): TCompile<{}, Type>
 /** Compiles a type for high performance validation */
 // prettier-ignore
 export function Compile(...args: any[]): never {

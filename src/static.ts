@@ -26,7 +26,7 @@ THE SOFTWARE.
 
 ---------------------------------------------------------------------------*/
 
-import { Validator } from './compile/validator'
+import { type Validator } from './compile/validator'
 import * as s from '@sinclair/typebox/syntax'
 import * as t from '@sinclair/typebox'
 import * as v from 'valibot'

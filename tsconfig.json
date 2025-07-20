@@ -5,7 +5,13 @@
     "moduleResolution": "Node",
     "baseUrl": ".",
     "paths": {
-      "@sinclair/typemap": ["src/index.ts"]
+      "@sinclair/typemap/compile": ["src/compile/index.ts"],
+      "@sinclair/typemap/guard": ["src/guard/index.ts"],
+      "@sinclair/typemap/typebox": ["src/typebox/index.ts"],
+      "@sinclair/typemap/valibot": ["src/valibot/index.ts"],
+      "@sinclair/typemap/zod": ["src/zod/index.ts"],
+      "@sinclair/typemap": ["src/index.ts"],
+
     }
   }
 }

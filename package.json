@@ -18,9 +18,7 @@
     "publish": "hammer task publish"
   },
   "peerDependencies": {
-    "@sinclair/typebox": "^0.34.30",
-    "valibot": "^1.0.0",
-    "zod": "^3.24.1"
+    "@sinclair/typebox": "^0.34.30"
   },
   "peerDependenciesMeta": {
     "zod": {
@@ -37,6 +35,8 @@
     "@types/node": "^22.10.2",
     "mocha": "^11.0.1",
     "prettier": "^3.4.2",
-    "typescript": "^5.7.2"
-  },
+    "typescript": "^5.7.2",
+    "valibot": "^1.0.0",
+    "zod": "^3.24.1"
+  }
 }

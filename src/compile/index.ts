@@ -1,10 +1,10 @@
 /*--------------------------------------------------------------------------
 
-@sinclair/typebox
+@sinclair/typemap
 
 The MIT License (MIT)
 
-Copyright (c) 2017-2024 Haydn Paterson (sinclair) <haydn.developer@gmail.com>
+Copyright (c) 2024-2025 Haydn Paterson (sinclair) <haydn.developer@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -26,13 +26,7 @@ THE SOFTWARE.
 
 ---------------------------------------------------------------------------*/
 
-import { createPackageJsonRedirect } from './create-package-json-redirect'
-import { createPackageJson } from './create-package-json'
-
-/** Builds package.json and redirect directories */
-export async function build(target: string) {
-  console.log('building...package.json')
-  const submodules = ['compile', 'guard', 'typebox', 'valibot', 'zod'] as string[]
-  await createPackageJsonRedirect(target, submodules)
-  await createPackageJson(target, submodules)
-}
+export * from './compile'
+export * from './environment'
+export * from './standard'
+export * from './validator'
