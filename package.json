@@ -35,7 +35,7 @@
     "@types/node": "^22.10.2",
     "mocha": "^11.0.1",
     "prettier": "^3.4.2",
-    "typescript": "^5.7.2",
+    "typescript": "^5.8.3",
     "valibot": "^1.0.0",
     "zod": "^3.24.1"
   }
